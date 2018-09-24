@@ -1,0 +1,8 @@
+jenkins:
+  Servers:
+    Global:
+      EnvVars:
+        DOCKER_REGISTRY: "harbor.pks.sanjoaquin.cf-app.com"
+monocular:
+  mongodb:
+    mongodbEnableIPv6: false
