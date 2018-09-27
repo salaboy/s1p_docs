@@ -50,5 +50,6 @@ Some important pointers to Spring Cloud Kubernetes features that are being used
   - jx import (inside the cloned directory)
    
    
-   
+ # Questions / Contact
+ Feel free to jump into our gitter channel for questions about this example, or create issues here. 
    
