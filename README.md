@@ -29,7 +29,12 @@ As in any microservice implementation, there are no strong dependencies between 
 Some important pointers to Spring Cloud Kubernetes features that are being used
 - [Dependencies used in Gateway](https://github.com/salaboy/s1p_gateway/blob/master/pom.xml#L62)
 - [Configuration used in Gateway](https://github.com/salaboy/s1p_gateway/blob/master/src/main/resources/application.yml#L15)
-- [ServiceAccount & Role & Role Bindings](https://github.com/salaboy/s1p_gateway/tree/master/charts/s1p-gateway/templates)
+- [Security Related Aspects: ServiceAccount & Role & Role Bindings](https://github.com/salaboy/s1p_gateway/tree/master/charts/s1p-gateway/templates)
+- [Using Configuration coming from Config Maps 1](https://github.com/salaboy/s1p_concerts-service/blob/master/src/main/java/org/sp1/demo/concerts/service/services/ConcertServiceImpl.java#L51)
+- [Using Discovery Client to find Services based on metadata and business logic](https://github.com/salaboy/s1p_concerts-service/blob/master/src/main/java/org/sp1/demo/concerts/service/services/ConcertServiceImpl.java#L95)
+- [Discovery Client labels filtering](https://github.com/salaboy/s1p_concerts-service/blob/master/src/main/resources/application.properties#L6)
+- [Using Configuration coming from Config Maps 2](https://github.com/salaboy/s1p_concerts-service/blob/master/src/main/java/org/sp1/demo/concerts/service/config/ConcertsConfiguration.java)
+- [Using Configuration coming from Config Maps 3](https://github.com/salaboy/s1p_concerts-service/blob/master/src/main/resources/bootstrap.properties#L2)
 
 
 # Deploy yourself
