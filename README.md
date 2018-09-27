@@ -12,7 +12,7 @@ In order to deploy each service into PKS, we used [Jenkins X](http://jenkinsx.io
 
 # Scenario
 
-[![Scenario](s1p.png)]
+![Scenario](s1p.png)
   
 We have 3 simple components that are deployed into the Kubernetes Cluster. These components will use Spring Cloud features to do service discovery and configurations. 
 
@@ -26,6 +26,10 @@ As in any microservice implementation, there are no strong dependencies between 
 
 # Spring Cloud Kubernetes pointers
 
+Some important pointers to Spring Cloud Kubernetes features that are being used
+- [Dependencies used in Gateway](https://github.com/salaboy/s1p_gateway/blob/master/pom.xml#L62)
+- [Configuration used in Gateway](https://github.com/salaboy/s1p_gateway/blob/master/src/main/resources/application.yml#L15)
+- [ServiceAccount & Role & Role Bindings](https://github.com/salaboy/s1p_gateway/tree/master/charts/s1p-gateway/templates)
 
 
 # Deploy yourself
