@@ -51,5 +51,6 @@ Some important pointers to Spring Cloud Kubernetes features that are being used
    
    
  # Questions / Contact
- Feel free to jump into our gitter channel for questions about this example, or create issues here. 
+ Feel free to jump into our [gitter channel](https://gitter.im/Activiti/Activiti7?utm_source=share-link&utm_medium=link&utm_campaign=share-link) for questions about this example, or create issues here.
+ We are happy to improve this examples, because we are using these frameworks inside Activiti Cloud. 
    
