@@ -1,30 +1,45 @@
 # SpringOne Platform 2018 :: Spring Cloud on PKS (Kubernetes)
-S1P :: Docs about Spring Cloud on PKS presentation 
 
-This document goes over the features covered in the presentation. 
+This document goes over the features covered in [this presentation]()
 The following repositories were deployed into an instance of PKS (Pivotal (K)Container Services), but the same application be deployed to other Kubernetes installations. 
 
 - [s1p_gateway](https://github.com/salaboy/s1p_gateway)
 - [s1p_concerts-service](https://github.com/salaboy/s1p_concerts-service)
-- [s1p_tickets-service]()
-- [Spring Boot Admin with K8s Support]()
+- [s1p_tickets-service](https://github.com/salaboy/s1p_tickets-service)
+- [Spring Boot Admin with K8s Support](https://github.com/salaboy/showcase-admin-tool)
 
-In order to deploy each service into PKS, we used [Jenkins X](http://jenkinsx.io) 
+In order to deploy each service into PKS, we used [Jenkins X](http://jenkinsx.io), but you can use any other tools that you fancy to deploy these projects. 
+
+# Scenario
 
 [![Scenario](s1p.png)]
   
+We have 3 simple components that are deployed into the Kubernetes Cluster. These components will use Spring Cloud features to do service discovery and configurations. 
+
+We will start by having a Spring Cloud Gateway that will automatically register routes based on Discovered Services. Notice that now, the service registration is done by Kubernetes, so all Kubernetes Services will be available to the DiscoveryClient. To filter some of the results, we can use labels, to configure the Discovery Client to filter only the services which contains a certain set of labels (conditions). 
+
+Then we have the main Concerts Service, which is backed up by MongoDB to store basic information about each concert. The concert information doesn't have any tickets related information and that is delegated to specific "Tickets" services for each concert. In that way you should be able to scale the tickets handling if there is high demand for one of the concerts. 
+
+By default, when you get the concerts list, no tickets information will be fetched. When you request a special concert, if a tickets service exist for the concert it will decorate the concert information by calling the corresponding Tickets Service. 
+
+As in any microservice implementation, there are no strong dependencies between services, meaning that you can deploy services in any order and they will be used when available. 
+
+# Spring Cloud Kubernetes pointers
+
+
 
 # Deploy yourself
 
-1) Configure your kubernetes cluster to get access using kubectl
-2) Install Jenkins X (Getting Started)
-3) Fork [s1p_gateway]()
-  3.1) jx import (inside the cloned directory)
-  3.2) Wait for the pipeline to deploy the Spring Cloud Gateway
-4) Fork [s1p_concerts-service]()
-   4.1) jx import (inside the cloned directory)
-5) Fork [s1p_tickets-service]()
-   5.1) jx import (inside the cloned directory)
+- Configure your kubernetes cluster to get access using kubectl
+- Install Jenkins X [Getting Started](https://jenkins-x.io/getting-started/). Notice that you need to install the CLI and JX services in your Kubernetes cluster.
+- Fork [s1p_gateway](https://github.com/salaboy/s1p_gateway)
+  - jx import (inside the cloned directory)
+  - Wait for the pipeline to deploy the Spring Cloud Gateway
+- Fork [s1p_concerts-service](https://github.com/salaboy/s1p_concerts-service)
+  - jx import (inside the cloned directory)
+- Fork [s1p_tickets-service](https://github.com/salaboy/s1p_tickets-service)
+  - jx import (inside the cloned directory)
+   
    
    
    
