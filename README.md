@@ -41,6 +41,21 @@ Some important pointers to Spring Cloud Kubernetes features that are being used
 
 - Configure your kubernetes cluster to get access using kubectl
 - Install Jenkins X [Getting Started](https://jenkins-x.io/getting-started/). Notice that you need to install the CLI and JX services in your Kubernetes cluster.
+- Add Mongo DB to the stating environment
+  - Edit env/requirements.yaml and add
+  ```
+  - name: mongodb
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 4.2.1
+  ```
+  - Edit env/values.yaml and add
+  ```
+  mongodb:
+  mongodbUsername: "test"
+  mongodbPassword: "test"
+  mongodbDatabase: "testdb"
+  ```
+  
 - Fork [s1p_gateway](https://github.com/salaboy/s1p_gateway)
   - jx import (inside the cloned directory)
   - Wait for the pipeline to deploy the Spring Cloud Gateway
