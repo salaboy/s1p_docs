@@ -45,15 +45,15 @@ Some important pointers to Spring Cloud Kubernetes features that are being used
   - Edit env/requirements.yaml and add
   ```
   - name: mongodb
-  repository: https://kubernetes-charts.storage.googleapis.com
-  version: 4.2.1
+    repository: https://kubernetes-charts.storage.googleapis.com
+    version: 4.2.1
   ```
   - Edit env/values.yaml and add
   ```
   mongodb:
-  mongodbUsername: "test"
-  mongodbPassword: "test"
-  mongodbDatabase: "testdb"
+    mongodbUsername: "test"
+    mongodbPassword: "test"
+    mongodbDatabase: "testdb"
   ```
   
 - Fork [s1p_gateway](https://github.com/salaboy/s1p_gateway)
